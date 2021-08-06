@@ -8,14 +8,14 @@ export default function Topbar() {
     return (
         <div>
             <div className="d-flex justify-content-between py-2">
-              
+
 
                 {loggedInUser.email ? (
                     <>
                         <p className="text-primary">{loggedInUser.name}</p>
                         <button
                             className="btn btn-danger btn-sm"
-                            onClick={() => loggedInUser.signout()}
+                            onClick={() => auth.signout()}
                         >
                             Sign Out
                         </button>

@@ -48,7 +48,8 @@ function useProvidedAuth() {
   const formatUser = {
     name: user.displayName,
     email: user.email,
-    photoURL: user.photoURL
+    photoURL: user.photoURL,
+    isSignedIn: user.isSignedIn
   }
   const [error, setError] = useState('');
 

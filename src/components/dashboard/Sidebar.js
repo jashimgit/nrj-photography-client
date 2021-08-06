@@ -47,15 +47,7 @@ export default function Sidebar() {
                         Make Admin
                     </Link>
                 </li>
-                <li className="nav-item">
-                    <Link
-                        to="/dashboard/add-review"
-                        className="nav-link menuLink"
-                        aria-current="page"
-                    >
-                        Review Service
-                    </Link>
-                </li>
+                
                 <li className="nav-item">
                     <Link
                         to="/dashboard/service"
@@ -65,15 +57,7 @@ export default function Sidebar() {
                         Manage Service
                     </Link>
                 </li>
-                <li className="nav-item">
-                    <Link
-                        to="/dashboard/add-service"
-                        className="nav-link menuLink"
-                        aria-current="page"
-                    >
-                        Add Service
-                    </Link>
-                </li>
+               
             </ul>
         </nav>
     )

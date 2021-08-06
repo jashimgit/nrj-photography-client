@@ -17,11 +17,10 @@ export default function OrdersList() {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                status: status,
+                status: status, 
                 _id: id
             })
         })
-        // console.log(status);
     }
     
     // fetch data from server

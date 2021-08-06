@@ -25,7 +25,7 @@ export default function Checkout() {
             status: 'pending'
 
         }
-        console.log(bookingInfo);
+        // console.log(bookingInfo);
         const url = `http://localhost:5000/add-order`;
         fetch(url, {
             method: "POST",
