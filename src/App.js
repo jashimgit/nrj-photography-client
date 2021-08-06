@@ -1,24 +1,58 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { ProvideAuth } from './components/auth/Auth';
+import Login from './components/auth/Login';
+import PrivateRoute from './components/auth/PrivateRoute';
+import AddAdmin from './components/dashboard/AddAdmin';
+import AddService from './components/dashboard/AddService';
+import Checkout from './components/dashboard/Checkout';
+import Dashboard from './components/dashboard/Dashboard';
+import OrderList from './components/dashboard/OrdersList';
+import ServiceList from './components/dashboard/ServiceList';
+import Home from './components/pages/Home';
+import ServiceDetails from './components/pages/ServiceDetails';
+
+
+
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ProvideAuth>
+      <Router>
+        <Switch>
+          <Route path="/service-details">
+            <ServiceDetails></ServiceDetails>
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <PrivateRoute path="/checkout">
+            <Checkout></Checkout>
+          </PrivateRoute>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <PrivateRoute exact path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/order-list">
+            <OrderList></OrderList>
+          </PrivateRoute>
+        <PrivateRoute path="/dashboard/add-admin">
+            <AddAdmin></AddAdmin>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/add-service">
+            <AddService></AddService>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/service">
+            <ServiceList></ServiceList>
+          </PrivateRoute>
+        </Switch>
+      </Router>
+    </ProvideAuth>
+
   );
 }
 
